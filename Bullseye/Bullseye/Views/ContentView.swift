@@ -1,9 +1,5 @@
-//
-//  ContentView.swift
-//  Victor1A
-//
-//  Created by SW on 3/14/24./Users/sam/projects/Journals/bootcamp1b-/Victor1A/Victor1A/ContentView.swift
-//
+// plan for monday
+//open -a Xcode
 
 import SwiftUI
 
