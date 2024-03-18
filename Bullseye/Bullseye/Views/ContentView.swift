@@ -10,43 +10,56 @@ struct ContentView: View {
   
   
   var body: some View {
-    VStack{
-      Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
-        .bold()
-        .multilineTextAlignment(.center)
-        .lineSpacing(4.0)
-        .font(.footnote)
-        .kerning(2.0)
-      Text(String(game.target))
-        .kerning(-1.0)
-        .font(.largeTitle)
-        .fontWeight(.black)
-      HStack {
-        Text("1")
+    ZStack{
+      Color.gray
+      VStack{
+        Text("🎯🎯🎯\nPUT the Bullseye as close as you can to".uppercased())
           .bold()
-        Slider(value: $sliderValue, in: 1.0...100.0)
-        Text("100")
+          .multilineTextAlignment(.center)
+          .lineSpacing(4.0)
+          .font(.footnote)
+          .kerning(2.0)
+          .padding(.horizontal,30)
+        Text(String(game.target))
+          .kerning(-1.0)
+          .font(.largeTitle)
+          .fontWeight(.black)
+        HStack {
+          Text("1")
+            .bold()
+          Slider(value: $sliderValue, in: 1.0...100.0)
+          Text("100")
+            .bold()
+        }
+        Button ("Hit Me".uppercased()) {
+          alertIsVisible = true
+        }
+        .padding(20.0)
+        .background(
+          Color.blue
+        )
+        foregroundColor(.white)
+          .cornerRadius(21.0)
           .bold()
-      }
-      Button ("Hit Me") {
-        alertIsVisible = true
-      }
-      .alert(
-        "Hello there!",
-        isPresented: $alertIsVisible,
-        actions: {
-          Button("Awesome") {
-            print("Alert closed")
-          }
-        },
-        message:{
-          let roundedValue = Int(sliderValue.rounded())
-          Text ("""
+          .font(.title3)
+          .alert(
+            "Hello there!",
+            isPresented: $alertIsVisible,
+            actions: {
+              Button("Awesome") {
+                print("Alert closed")
+              }
+            },
+            message:{
+              let roundedValue = Int(sliderValue.rounded())
+              Text ("""
 The slider's value is  \(roundedValue).
 You scored \(game.points(sliderValue: roundedValue))points this round.
 """)
-        }
-      )
+            }
+          )
+      }
+      .background(Color.gray)
     }
   }
 }
