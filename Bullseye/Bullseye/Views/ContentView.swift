@@ -10,16 +10,16 @@ struct ContentView: View {
   
   
   var body: some View {
-    ZStack{
-      Color.gray
+    ZStack {
+      Color(.gray)
+        .ignoresSafeArea()
       VStack{
-        Text("🎯🎯🎯\nPUT the Bullseye as close as you can to".uppercased())
+        Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
           .bold()
           .multilineTextAlignment(.center)
           .lineSpacing(4.0)
           .font(.footnote)
           .kerning(2.0)
-          .padding(.horizontal,30)
         Text(String(game.target))
           .kerning(-1.0)
           .font(.largeTitle)
@@ -31,35 +31,26 @@ struct ContentView: View {
           Text("100")
             .bold()
         }
-        Button ("Hit Me".uppercased()) {
+        Button ("Hit Me") {
           alertIsVisible = true
         }
-        .padding(20.0)
-        .background(
-          Color.blue
-        )
-        foregroundColor(.white)
-          .cornerRadius(21.0)
-          .bold()
-          .font(.title3)
-          .alert(
-            "Hello there!",
-            isPresented: $alertIsVisible,
-            actions: {
-              Button("Awesome") {
-                print("Alert closed")
-              }
-            },
-            message:{
-              let roundedValue = Int(sliderValue.rounded())
-              Text ("""
+        .alert(
+          "Hello there!",
+          isPresented: $alertIsVisible,
+          actions: {
+            Button("Awesome") {
+              print("Alert closed")
+            }
+          },
+          message:{
+            let roundedValue = Int(sliderValue.rounded())
+            Text ("""
 The slider's value is  \(roundedValue).
 You scored \(game.points(sliderValue: roundedValue))points this round.
 """)
-            }
-          )
+          }
+        )
       }
-      .background(Color.gray)
     }
   }
 }
