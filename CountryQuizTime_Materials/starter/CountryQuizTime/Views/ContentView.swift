@@ -35,11 +35,26 @@ import SwiftUI
 struct ContentView: View {
   @ObservedObject var quiz: Quiz
   @State private var showResult = false
+  
   private var scoreMessage: String {
-    let localizedString = NSLocalizedString("points-count %lld", comment: "The pluralized score")
-    return String(format: localizedString, quiz.score)
+    String (
+      localized: "points-count  \( quiz.score)",
+      comment: "The pluralized score."
+    )
   }
-
+  private var appTitle: AttributedString {
+    AttributedString (localized: "Welcome to _Country Quiz Time_",
+                      comment: "App welcome title"
+    )
+  }
+  //  private var scoreMessage: String {
+  //    //1
+  //    let localizedString
+  //    = NSLocalizedString("points-count %lld", comment: "The pluralized score")
+  //    //2
+  //    return String(format: localizedString, quiz.score)
+  //  }
+  
   var body: some View {
     ScrollView {
       content
@@ -48,7 +63,7 @@ struct ContentView: View {
       nextButton
     }
   }
-
+  
   private var content: some View {
     VStack(alignment: .leading) {
       titleView
@@ -62,16 +77,17 @@ struct ContentView: View {
     }
     .padding()
   }
-
+  
   private var titleView: some View {
     VStack(alignment: .leading, spacing: 2) {
-      Text("Welcome to Country Quiz Time")
+//      Text("Welcome to _Country Quiz Time_", comment: "App welcome title")
+      Text(appTitle)
         .font(.largeTitle)
         .foregroundColor(Color("Region"))
       Divider()
     }
   }
-
+  
   private var scoreView: some View {
     HStack {
       Text("Score: \(quiz.score)")
@@ -82,7 +98,7 @@ struct ContentView: View {
       .buttonStyle(ActionButtonStyle())
     }
   }
-
+  
   private var nextButton: some View {
     Button("Next", role: .cancel) {
       quiz.reset()
@@ -93,8 +109,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     Group {
+      //1
       ContentView(quiz: Quiz())
+        .environment(\.locale, .init(identifier: "en"))
+      //2
       ContentView(quiz: Quiz())
+        .environment(\.locale, .init(identifier: "es"))
     }
   }
 }
