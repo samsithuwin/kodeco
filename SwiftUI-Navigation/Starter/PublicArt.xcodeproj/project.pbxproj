@@ -10,6 +10,7 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		2223C8E62BAB362500351E48 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223C8E52BAB362500351E48 /* DetailView.swift */; };
 		483763FD29FC216D0052BB18 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483763F829FC216D0052BB18 /* MapView.swift */; };
 		483763FE29FC216D0052BB18 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483763F929FC216D0052BB18 /* Artwork.swift */; };
 		4837640329FC23160052BB18 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4837640229FC23160052BB18 /* AppMain.swift */; };
@@ -22,6 +23,7 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2223C8E52BAB362500351E48 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		483763F829FC216D0052BB18 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		483763F929FC216D0052BB18 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		4837640229FC23160052BB18 /* AppMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				4837640229FC23160052BB18 /* AppMain.swift */,
 				483763F929FC216D0052BB18 /* Artwork.swift */,
 				48EA5FB329FC253900633322 /* ContentView.swift */,
+				2223C8E52BAB362500351E48 /* DetailView.swift */,
 				483763F829FC216D0052BB18 /* MapView.swift */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775CE22AD944400AE281E /* Info.plist */,
@@ -178,6 +181,7 @@
 				483763FD29FC216D0052BB18 /* MapView.swift in Sources */,
 				483763FE29FC216D0052BB18 /* Artwork.swift in Sources */,
 				48EA5FB429FC253900633322 /* ContentView.swift in Sources */,
+				2223C8E62BAB362500351E48 /* DetailView.swift in Sources */,
 				4837640329FC23160052BB18 /* AppMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
